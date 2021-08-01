@@ -1,0 +1,10 @@
+#headers{
+font-weight: bold ;
+
+margin-left: auto;
+}
+.menu{
+   display:flex;
+   justify-content:center;
+   
+}

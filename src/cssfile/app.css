@@ -1,0 +1,42 @@
+*{
+padding: 0%;
+margin: 0%;    
+}
+.content{
+    background-color: rgb(131, 153, 153);
+}
+    
+.text{
+   font-size: large; 
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.mntan{
+    width:100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+background-size: cover;
+background-image: url('../imges/mntain.jpg');
+}
+.menu{
+    background-color: rgb(204, 153, 0);
+    margin-left: auto;
+    width: 100%;
+    left:80px;
+     font-weight:400px;
+    
+    height:10vh;
+   display: flex;
+   justify-content: space-around; 
+}
+.opt{
+    color:	rgb(0, 0, 0);
+ display:flex;
+justify-content:center;
+text-decoration:none;
+position:relative;
+left:400px;
+margin:0 0 0 10px;
+
+color:white;
+
+}
