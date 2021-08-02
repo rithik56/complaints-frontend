@@ -24,15 +24,10 @@ const Register = () => {
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m">First name</label>
+                      <label class="form-label" for="form3Example1m"> name</label>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n">Last name</label>
-                    </div>
-                  </div>
+                  
                 </div>
 
                 <div class="row">
