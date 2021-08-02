@@ -1,5 +1,4 @@
 .form4 {
-    background-color: #be850af3;
     background-size: cover
 }
 
@@ -9,7 +8,7 @@
 }
 
 .form-bg {
-    background: rgba(68, 68, 65, 0.77);
+    
     padding: 20px
 }
 
@@ -38,7 +37,7 @@
     border-left: 0px;
     border-right: 0px;
     border-bottom: 1px solid #61615e;
-    background: transparent;
+    /*background: transparent;*/
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;

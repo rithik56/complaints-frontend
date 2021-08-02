@@ -10,6 +10,7 @@ import Register from './components/Register'
 import Contactus from './components/Contactus'
 import Onlinefiling from './components/Onlinefiling'
 import Departments from './components/Department'
+import Footer from './components/Footer'
 
    const Routing = () =>{
    return(
@@ -46,6 +47,7 @@ const App = () => {
     <div className="mntan">
 <Navbar/>
 <Routing/>
+<Footer />
 </div>
     </>
   )
