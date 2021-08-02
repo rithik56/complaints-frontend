@@ -1,30 +1,34 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css'
-import '../cssfile/headcss.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "../cssfile/headcss.css";
 
 const Navbar = () => {
-    return (
-        <> 
+  return (
+    <>
       <header>
-       
-          <nav>
+        <nav>
           <div className="menu">
-          
-            <a href="/Home" className="opt">Home</a>
-            <a href="/Contactus" className="opt">Contactus</a>
-            <a href="/Onlinefiling" className="opt">Onlinefiling</a>
-            <a href="/Register" className="opt">Registration</a>
-            <a href="/Login" className="opt">Login</a>
-            </div>
-            
-          </nav>
-       
+            <a href="/Home" className="opt">
+              Home
+            </a>
+            <a href="/Contactus" className="opt">
+              Contactus
+            </a>
+            <a href="/Onlinefiling" className="opt">
+              Onlinefiling
+            </a>
+            <a href="/Register" className="opt">
+              Registration
+            </a>
+            <a href="/Login" className="opt">
+              Login
+            </a>
+          </div>
+        </nav>
       </header>
+    </>
+  );
+};
 
-        </>
-    )
-}
-
-export default Navbar
-
+export default Navbar;
