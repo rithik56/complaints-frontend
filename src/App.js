@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import "../src/css/app.css";
 
-import "./components/Navbar";
+import "./css/app.css";
+
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
@@ -14,25 +14,12 @@ import Departments from "./components/Department";
 const Routing = () => {
   return (
     <Switch>
-      <Route exact path="/Home">
-        <Home />
-      </Route>
-
-      <Route path="/Login">
-        <Login />
-      </Route>
-
-      <Route path="/Register">
-        <Register />
-      </Route>
-
-      <Route path="/Contactus">
-        <Contactus />
-      </Route>
-
-      <Route path="/Onlinefiling">
-        <Onlinefiling />
-      </Route>
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
+      <Route path="/contact-us" component={Contactus} />
+      <Route path="/online-filine" component={Onlinefiling} />
+      <Route path="/departments" component={Departments} />
     </Switch>
   );
 };
@@ -40,10 +27,8 @@ const Routing = () => {
 const App = () => {
   return (
     <>
-      <div className="mntan">
-        <Navbar />
-        <Routing />
-      </div>
+      <Navbar />
+      <Routing />
     </>
   );
 };
