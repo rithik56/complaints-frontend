@@ -1,22 +1,80 @@
-import React from "react";
+import { useRef } from "react";
 
 const Register = () => {
+  /**
+   * @type {HTMLInputElement}
+   */
+  const nameRef = useRef();
+
+  /**
+   * @type {HTMLInputElement}
+   */
+  const emailRef = useRef();
+
+  /**
+   * @type {HTMLInputElement}
+   */
+  const passwordRef = useRef();
+
+  /**
+   * @type {HTMLInputElement}
+   */
+  const confirmPwdRef = useRef();
+
+  const validateInputs = () => {
+    // test email
+    const emailRegex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const isEmailValid = emailRegex.test(emailRef.current.value);
+    // confirm if password and confirm password matches
+    const passwordMatches =
+      passwordRef.current.value === confirmPwdRef.current.value;
+    return isEmailValid && passwordMatches;
+  };
+
+  const register = () => {
+    if (validateInputs()) {
+      // for now only console.log the values
+      // but late we can send a post request to backend
+      let json = {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+      };
+
+      // note: Logic below is for sending the data to backend 👇👇👇
+      // fetch("http://backend/api/endpoint", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(json);
+      // });
+      // *
+
+      console.log(json);
+    } else {
+      alert(
+        "Please enter a valid email address and make sure password and confirm password match."
+      );
+    }
+  };
+
   return (
     <section>
-      <div class="container py-5 h-100">
+      <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col">
             <div class="card card-registration my-4">
               <div class="row g-0">
-                <div class="col-xl-6 d-none d-xl-block">
+                <div class="col-xl-3 d-none d-xl-block">
                   <img
                     src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img4.jpg"
-                    alt="Sample photo"
-                    class="img-fluid"
-                    // style={"border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"}
+                    alt="People Gathered Arond"
+                    className="img-fluid"
                   />
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-9">
                   <div class="card-body p-md-5 text-black">
                     <h3 class="mb-5 text-uppercase">
                       complaint registration form
@@ -26,162 +84,58 @@ const Register = () => {
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
+                            ref={nameRef}
                             type="text"
                             id="form3Example1m"
                             class="form-control form-control-lg"
+                            placeholder="Name"
                           />
-                          <label class="form-label" for="form3Example1m">
-                            {" "}
-                            name
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <input
-                            type="text"
-                            id="form3Example1m1"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Example1m1">
-                            Department
-                          </label>
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
-                            type="number"
-                            id="form3Example1n1"
+                            ref={emailRef}
+                            type="email"
+                            id="form3Example1m"
                             class="form-control form-control-lg"
+                            placeholder="Email"
                           />
-                          <label class="form-label" for="form3Example1n1">
-                            phoneno
-                          </label>
                         </div>
                       </div>
                     </div>
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example8"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example8">
-                        Address
-                      </label>
-                    </div>
-
-                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                      <h6 class="mb-0 me-4">Gender: </h6>
-
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="femaleGender"
-                          value="option1"
-                        />
-                        <label class="form-check-label" for="femaleGender">
-                          Female
-                        </label>
-                      </div>
-
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="maleGender"
-                          value="option2"
-                        />
-                        <label class="form-check-label" for="maleGender">
-                          Male
-                        </label>
-                      </div>
-
-                      <div class="form-check form-check-inline mb-0">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="otherGender"
-                          value="option3"
-                        />
-                        <label class="form-check-label" for="otherGender">
-                          Other
-                        </label>
-                      </div>
-                    </div>
-
                     <div class="row">
                       <div class="col-md-6 mb-4">
-                        <select class="select">
-                          <option value="1">State</option>
-                          <option value="2">Option 1</option>
-                          <option value="3">Option 2</option>
-                          <option value="4">Option 3</option>
-                        </select>
+                        <div class="form-outline">
+                          <input
+                            ref={passwordRef}
+                            type="password"
+                            id="form3Example1m"
+                            class="form-control form-control-lg"
+                            placeholder="Create Password"
+                          />
+                        </div>
                       </div>
                       <div class="col-md-6 mb-4">
-                        <select class="select">
-                          <option value="1">City</option>
-                          <option value="2">Option 1</option>
-                          <option value="3">Option 2</option>
-                          <option value="4">Option 3</option>
-                        </select>
+                        <div class="form-outline">
+                          <input
+                            ref={confirmPwdRef}
+                            type="password"
+                            id="form3Example1m"
+                            class="form-control form-control-lg"
+                            placeholder="Confirm Password"
+                          />
+                        </div>
                       </div>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example9"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example9">
-                        DOB
-                      </label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example90"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example90">
-                        Pincode
-                      </label>
-                    </div>
-
-                    {/* <div class="form-outline mb-4">
-                  <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example99">Course</label>
-                </div> */}
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example97"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example97">
-                        Email ID
-                      </label>
                     </div>
 
                     <div class="d-flex justify-content-end pt-3">
-                      <button type="button" class="btn btn-light btn-lg">
-                        Reset all
-                      </button>
-                      <button type="button" class="btn btn-warning btn-lg ms-2">
-                        Submit form
+                      <button
+                        type="button"
+                        class="btn btn-warning btn-lg ms-2"
+                        onClick={register}
+                      >
+                        Register
                       </button>
                     </div>
                   </div>
