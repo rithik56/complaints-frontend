@@ -1,13 +1,57 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* This targets the html element where all components are rendered in */
+#root {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./imges/mntain.jpg");
 }
+
+/* Global style variables */
+.dark-theme {
+  --text-color: var(--gray2);
+  --background: var(--gray6);
+  --h-color: #fff;
+  --nav-bg: var(--gray5);
+}
+
+:root {
+  --blue: #0069ff;
+  --font-size: 20px;
+  --h-font-size: 24px;
+  --text-color: var(--gray4);
+  --h-color: var(--gray6);
+  --gray0: #f8f8f8;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+  --overlay-bg: rgba(0, 0, 0, 0.9);
+  --background: var(--gray0);
+  --nav-bg: #fff;
+  --nav-shadow: #010101 0px 0px 29px -7px;
+  --side-nav-bg: #f3f5f9;
+  --logo-width: 1.5em;
+  --logo-height: 1.5em;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: 15px;
+  }
+}
+/* End of global style variables */

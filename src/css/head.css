@@ -1,0 +1,131 @@
+header {
+  background-color: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  padding: 1rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: var(--logo-width);
+  height: var(--logo-height);
+  background-color: red;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.navbar .item {
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 1em;
+  height: 100%;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.navbar .item:hover {
+  color: var(--blue);
+}
+
+.navbar .item > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sidenav {
+  display: none;
+}
+
+.menu-burger {
+  display: none;
+}
+
+#sidenav .close-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-burger {
+    display: initial;
+    width: 30px;
+    height: 30px;
+  }
+
+  #sidenav {
+    display: initial;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 1em;
+    width: 250px;
+    background-color: var(--side-nav-bg);
+    box-shadow: var(--nav-shadow);
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  #sidenav .close-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  #sidenav .close-icon > svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  #sidenav.active {
+    transform: translateX(0);
+  }
+
+  #sidenav ul {
+    list-style: none;
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  #sidenav ul .sidenav-item {
+    padding-right: 2.5rem;
+    text-align: right;
+    margin: 1rem 0;
+  }
+
+  #sidenav ul .sidenav-item a {
+    font-size: var(--font-size);
+    text-decoration: none;
+    color: var(--text-color);
+    line-height: 27px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  #sidenav ul .sidenav-item a:hover {
+    color: var(--blue);
+  }
+}
