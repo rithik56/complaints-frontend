@@ -76,8 +76,8 @@ const Register = () => {
                 </div>
                 <div class="col-xl-9">
                   <div class="card-body p-md-5 text-black">
-                    <h3 class="mb-5 text-uppercase">
-                      complaint registration form
+                    <h3 class="mb-5">
+                       Register
                     </h3>
 
                     <div class="row">
@@ -112,7 +112,7 @@ const Register = () => {
                             type="password"
                             id="form3Example1m"
                             class="form-control form-control-lg"
-                            placeholder="Create Password"
+                            placeholder="Password"
                           />
                         </div>
                       </div>

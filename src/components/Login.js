@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div class="wrapper">
       <form class="login">
-        <p class="title">Log in</p>
+        <p class="title">Login</p>
         <input type="text" placeholder="Email" autofocus />
         <i class="fa fa-user"></i>
         <input type="password" placeholder="Password" />
@@ -13,7 +13,7 @@ const Login = () => {
         <a href="#">Forgot your password?</a>
         <button>
           <i class="spinner"></i>
-          <span class="state">Log in</span>
+          <span class="state">Log In</span>
         </button>
       </form>
     </div>

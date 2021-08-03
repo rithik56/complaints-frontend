@@ -48,7 +48,7 @@ const Contactus = () => {
             <div className="row g-0">
               <div className="col-xl-12">
                 <div className="card-body p-md-5 text-black">
-                  <h3 className="mb-5 text-uppercase">Contact Us</h3>
+                  <h3 className="mb-5">Contact Us</h3>
 
                   <div className="row">
                     <div className="col-md-6 mb-4">
