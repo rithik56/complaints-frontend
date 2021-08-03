@@ -3,7 +3,6 @@ import { useRef } from "react";
 const Contactus = () => {
   const nameRef = useRef();
   const emailRef = useRef();
-  const passwordRef = useRef();
   const issueRef = useRef();
 
   const send = () => {
@@ -16,9 +15,6 @@ const Contactus = () => {
 
     if (!nameRef.current.value) return alert("Please enter a valid name.");
 
-    if (!passwordRef.current.value)
-      return alert("Please enter a valid password.");
-
     if (!issueRef.current.value)
       return alert("Please do not leave issue blank.");
 
@@ -26,7 +22,6 @@ const Contactus = () => {
     let json = {
       name: nameRef.current.value,
       email: emailRef.current.value,
-      password: passwordRef.current.value,
       issue: issueRef.current.value,
     };
     console.log(json);
@@ -85,22 +80,7 @@ const Contactus = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-md-6 mb-4">
-                      <div className="form-outline">
-                        <input
-                          ref={passwordRef}
-                          type="password"
-                          id="form3Example1m"
-                          className="form-control form-control-lg"
-                          placeholder="Enter your password"
-                        />
-                        <label htmlFor="password field" className="form-label">
-                          Password
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                  
                   <div classNameName="row">
                     <div className="col-md-12 mb-4">
                       <div className="form-outline">
