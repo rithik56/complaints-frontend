@@ -142,4 +142,22 @@ header {
   #sidenav ul .sidenav-item a:hover {
     color: var(--blue);
   }
+
+  #sidenav ul .sidenav-item a .icon {
+    width: 24px;
+    height: 24px;
+    transition: color 0.3s ease;
+  }
+
+  #sidenav ul .sidenav-item a:hover .icon.sun {
+    color: var(--orange);
+  }
+
+  #sidenav ul .sidenav-item a .icon.moon {
+    color: var(--gray2);
+  }
+
+  #sidenav ul .sidenav-item a:hover .icon.moon {
+    color: var(--text-color);
+  }
 }
