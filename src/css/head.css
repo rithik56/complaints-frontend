@@ -5,7 +5,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
 }
 
 .logo {
@@ -43,10 +42,22 @@ header {
   color: var(--blue);
 }
 
-.navbar .item > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar .item .icon {
+  width: 24px;
+  height: 24px;
+  transition: color 0.3s ease;
+}
+
+.navbar .item:hover .icon.sun {
+  color: var(--orange);
+}
+
+.navbar .item .icon.moon {
+  color: var(--gray2);
+}
+
+.navbar .item:hover .icon.moon {
+  color: var(--text-color);
 }
 
 #sidenav {

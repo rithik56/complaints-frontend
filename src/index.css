@@ -8,6 +8,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
 }
 
 /* Global style variables */
@@ -64,8 +65,8 @@ body {
   --pink-dark: #ff1c72;
   --pink-light: #ff649e;
   --font-size: 20px;
-  --h-font-size: 24px;
   --text-color: var(--gray4);
+  --h-font-size: 24px;
   --gray0: #f8f8f8;
   --gray1: #dbe1e8;
   --gray2: #b2becd;
@@ -75,8 +76,6 @@ body {
   --gray6: #12181b;
   --background: var(--gray6);
   --h-color: #fff;
-  --font-size: 20px;
-  --h-font-size: 24px;
   --nav-shadow: 4px 0 10px -3px #010101;
   --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.38);
   --toc-shadow: rgba(0, 0, 0, 0.7) 0px 10px 20px 0px;
@@ -94,6 +93,7 @@ body {
 @media (max-width: 768px) {
   :root {
     --font-size: 15px;
+    --h-font-size: 19px;
   }
 }
 /* End of global style variables */
@@ -102,6 +102,5 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  background-color: var(--background);
   color: var(--text-color);
 }

@@ -1,3 +1,56 @@
-p {
-    padding: 10px;
+.main-content {
+  width: 100%;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../imges/mntain.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  position: relative;
+}
+
+.action .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.action .flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.action .slogan {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: var(--h-font-size);
+}
+
+.action .btn {
+  background-color: var(--blue);
+  color: #fff;
+  background-image: none;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action .btn:hover {
+  background-color: var(--blue-dark);
 }
