@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import "../css/cntus.css";
 
 const Contactus = () => {
   const nameRef = useRef();
@@ -80,7 +81,7 @@ const Contactus = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div classNameName="row">
                     <div className="col-md-12 mb-4">
                       <div className="form-outline">

@@ -42,10 +42,22 @@ header {
   color: var(--blue);
 }
 
-.navbar .item > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar .item .icon {
+  width: 24px;
+  height: 24px;
+  transition: color 0.3s ease;
+}
+
+.navbar .item:hover .icon.sun {
+  color: var(--orange);
+}
+
+.navbar .item .icon.moon {
+  color: var(--gray2);
+}
+
+.navbar .item:hover .icon.moon {
+  color: var(--text-color);
 }
 
 #sidenav {
@@ -65,6 +77,7 @@ header {
     display: initial;
     width: 30px;
     height: 30px;
+    color: var(--text-color);
   }
 
   #sidenav {
@@ -76,7 +89,7 @@ header {
     z-index: 1;
     padding-top: 1em;
     width: 250px;
-    background-color: var(--side-nav-bg);
+    background-color: var(--nav-bg);
     box-shadow: var(--nav-shadow);
     transform: translateX(100%);
     transition: all 0.5s ease;
@@ -94,6 +107,7 @@ header {
   #sidenav .close-icon > svg {
     width: 30px;
     height: 30px;
+    color: var(--text-color);
   }
 
   #sidenav.active {
