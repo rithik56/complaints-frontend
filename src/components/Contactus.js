@@ -9,7 +9,7 @@ const Contactus = () => {
   const send = () => {
     // test email
     const emailRegex =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const isEmailValid = emailRegex.test(emailRef.current.value);
 
     if (!isEmailValid) return alert("Please enter a valid email address.");
@@ -60,6 +60,7 @@ const Contactus = () => {
                           id="form3Example1m"
                           className="form-control form-control-lg"
                           placeholder="Enter your name"
+                          autoFocus
                         />
                         <label htmlFor="name field" className="form-label">
                           Name
@@ -82,7 +83,7 @@ const Contactus = () => {
                     </div>
                   </div>
 
-                  <div classNameName="row">
+                  <div className="row">
                     <div className="col-md-12 mb-4">
                       <div className="form-outline">
                         <label htmlFor="issue field" className="form-label">

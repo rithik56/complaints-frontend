@@ -29,6 +29,27 @@ body {
   transition: all 0.3s ease;
 }
 
+.dark-theme .card,
+.dark-theme .login {
+  background: var(--code-bg);
+}
+
+.dark-theme .login .title {
+  color: var(--text-color);
+}
+
+.dark-theme input,
+.dark-theme textarea {
+  background-color: var(--background);
+  color: #fff;
+}
+
+.dark-theme input:focus,
+.dark-theme textarea:focus {
+  background-color: var(--background);
+  color: #fff !important;
+}
+
 .light-theme {
   --background: var(--gray0);
   --text-color: var(--gray4);
