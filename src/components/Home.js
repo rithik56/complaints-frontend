@@ -10,9 +10,6 @@ const Home = () => {
           <h3 className="slogan">register your complaints easy and fast</h3>
           <button className="btn">Get Started</button>
         </div>
-        <section>
-          <p>This is home section.</p>
-        </section>
       </section>
     </div>
   );
