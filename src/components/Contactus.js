@@ -25,20 +25,25 @@ const Contactus = () => {
       email: emailRef.current.value,
       issue: issueRef.current.value,
     };
-    console.log(json);
+    // console.log(json);
 
     // later we can submit the data to backend endpoint
     // using the code 👇👇👇
-    // fetch("http://backend/api/endpoint", {
-    //   method: 'POST',
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(json),
-    // }).then(res => {
-    //   // manage response from backend.
-    // })
-    //   .catch(console.error); // log the error in console
+     fetch("/contactus", {
+       method: 'POST',
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify(json),
+     }).then(res => {
+       console.log(res.body);
+       res.status(201).send("users response has been taken sucessfully")
+       console.log("users response has been taken sucessfully")
+       // manage response from backend.
+
+
+     })
+       .catch(console.error); // log the error in console
   };
 
   return (

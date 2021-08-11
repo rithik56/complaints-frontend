@@ -42,18 +42,19 @@ const Register = () => {
         password: passwordRef.current.value,
       };
 
-      // note: Logic below is for sending the data to backend 👇👇👇
-      // fetch("http://backend/api/endpoint", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(json);
-      // });
-      // *
-
+       //note: Logic below is for sending the data to backend 👇👇👇
+       
+       fetch("register", {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json"
+         }
+         ,body: JSON.stringify(json)
+       });
+       
       console.log(json);
-    } else {
+      alert("registration sucessfull");
+    }else {
       alert(
         "Please enter a valid email address and make sure password and confirm password match."
       );
