@@ -36,6 +36,7 @@ const Contactus = () => {
        },
        body: JSON.stringify(json),
      }).then(res => {
+       alert("your response has been sent sucessfully");
        console.log(res.body);
        res.status(201).send("users response has been taken sucessfully")
        console.log("users response has been taken sucessfully")
@@ -60,6 +61,7 @@ const Contactus = () => {
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
                         <input
+                        name="name"
                           ref={nameRef}
                           type="text"
                           id="form3Example1m"
@@ -68,13 +70,14 @@ const Contactus = () => {
                           autoFocus
                         />
                         <label htmlFor="name field" className="form-label">
-                          Name
+                    
                         </label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
                         <input
+                        name="email"
                           ref={emailRef}
                           type="email"
                           id="form3Example1m"
@@ -95,6 +98,7 @@ const Contactus = () => {
                           Issue
                         </label>
                         <textarea
+                        name="issue"
                           ref={issueRef}
                           className="form-control"
                           required=""

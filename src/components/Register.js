@@ -54,6 +54,7 @@ const Register = () => {
        
       console.log(json);
       alert("registration sucessfull");
+          
     }else {
       alert(
         "Please enter a valid email address and make sure password and confirm password match."
