@@ -29,7 +29,8 @@ const Contactus = () => {
 
     // later we can submit the data to backend endpoint
     // using the code 👇👇👇
-     fetch("/contactus", {
+    
+    fetch("/contactus", {
        method: 'POST',
        headers: {
          "Content-Type": "application/json"
@@ -38,8 +39,8 @@ const Contactus = () => {
      }).then(res => {
        alert("your response has been sent sucessfully");
        console.log(res.body);
-       res.status(201).send("users response has been taken sucessfully")
-       console.log("users response has been taken sucessfully")
+       res.status(201).send("users response has been taken successfully")
+       console.log("users response has been taken sucessfully")   
        // manage response from backend.
 
 
