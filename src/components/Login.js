@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "../css/login.scss";
 
-const Login = () => {
+const Login = ({ history }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -22,8 +22,7 @@ const Login = () => {
       let json = await res.json();
       if (res.status === 200) {
         window.localStorage.setItem("token", json.token);
-        window.alert("Logged in");
-        // todo: redirect to online filing page instead of showing an alert.
+        history.push("/online-filing");
       } else {
         window.alert(json.error);
         // todo: ask user to try again instead of an alert.
