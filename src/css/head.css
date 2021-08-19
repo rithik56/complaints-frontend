@@ -36,6 +36,8 @@ header {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   color: var(--text-color);
+  cursor: pointer;
+  text-transform: capitalize;
 }
 
 .navbar .item:hover {
@@ -128,6 +130,8 @@ header {
     padding-right: 2.5rem;
     text-align: right;
     margin: 1rem 0;
+    text-transform: capitalize;
+    cursor: pointer;
   }
 
   #sidenav ul .sidenav-item a {
@@ -137,6 +141,18 @@ header {
     line-height: 27px;
     padding: 0.5rem;
     transition: all 0.3s ease;
+  }
+
+  #sidenav ul .sidenav-item span {
+    padding: 0.5rem;
+    line-height: 27px;
+    color: var(--text-color);
+    font-size: var(--font-size);
+    transition: all 0.3s ease;
+  }
+
+  #sidenav ul .sidenav-item span:hover {
+    color: var(--blue);
   }
 
   #sidenav ul .sidenav-item a:hover {

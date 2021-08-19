@@ -1,9 +1,11 @@
 import { useRef } from "react";
+import { useAuth } from "../hooks/useAuth";
 import "../css/login.scss";
 
 const Login = ({ history }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const { setAuth } = useAuth();
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -22,6 +24,7 @@ const Login = ({ history }) => {
       let json = await res.json();
       if (res.status === 200) {
         window.localStorage.setItem("token", json.token);
+        setAuth(true);
         history.push("/online-filing");
       } else {
         window.alert(json.error);
