@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
+import { useAuth } from "../hooks/useAuth";
 import "../css/head.css";
 
 const Navbar = () => {
@@ -10,9 +11,15 @@ const Navbar = () => {
   const sideNavRef = useRef();
   const toggleTheme = useTheme();
   const [theme, setTheme] = useState(window.localStorage.getItem("theme"));
+  const { auth, setAuth } = useAuth();
 
   const toggleSideNav = () => {
     sideNavRef.current.classList.toggle("active");
+  };
+
+  const signOut = () => {
+    window.localStorage.removeItem("token");
+    setAuth(false);
   };
 
   const changeTheme = () => {
@@ -33,12 +40,21 @@ const Navbar = () => {
           <NavLink to="/online-filing" className="item">
             Online Filing
           </NavLink>
-          <NavLink to="/register" className="item">
-            Register
-          </NavLink>
-          <NavLink to="/login" className="item">
-            Login
-          </NavLink>
+          {!auth ? (
+            <>
+              <NavLink to="/register" className="item">
+                Register
+              </NavLink>
+              <NavLink to="/login" className="item">
+                Login
+              </NavLink>
+            </>
+          ) : (
+            <span className="item" onClick={signOut}>
+              sign out
+            </span>
+          )}
+
           <NavLink to="#" className="item" onClick={changeTheme}>
             {theme === "dark-theme" ? (
               <svg
@@ -99,12 +115,23 @@ const Navbar = () => {
             <li className="sidenav-item">
               <NavLink to="/online-filing">Online Filing</NavLink>
             </li>
-            <li className="sidenav-item">
-              <NavLink to="/register">Register</NavLink>
-            </li>
-            <li className="sidenav-item">
-              <NavLink to="/login">Login</NavLink>
-            </li>
+
+            {!auth ? (
+              <>
+                <li className="sidenav-item">
+                  <NavLink to="/register">Register</NavLink>
+                </li>
+                <li className="sidenav-item">
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="sidenav-item">
+                  <span onClick={signOut}>sign out</span>
+                </li>
+              </>
+            )}
             <li className="sidenav-item">
               <NavLink to="#" className="item" onClick={changeTheme}>
                 {theme === "dark-theme" ? (

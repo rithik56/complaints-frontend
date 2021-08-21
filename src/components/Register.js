@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const Register = () => {
+const Register = ({ history }) => {
   /**
    * @type {HTMLInputElement}
    */
@@ -42,20 +42,21 @@ const Register = () => {
         password: passwordRef.current.value,
       };
 
-       //note: Logic below is for sending the data to backend 👇👇👇
-       
-       fetch("register", {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json"
-         }
-         ,body: JSON.stringify(json)
-       });
-       
-      console.log(json);
-      alert("registration sucessfull");
-          
-    }else {
+      //note: Logic below is for sending the data to backend 👇👇👇
+
+      fetch("register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(json),
+      });
+
+      // todo: show registration successfully notification.
+
+      // redirect user to login after registration (delay 1s after the notification is shown👆)
+      setTimeout(history.push.bind(history, "/login"), 1000);
+    } else {
       alert(
         "Please enter a valid email address and make sure password and confirm password match."
       );

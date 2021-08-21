@@ -29,23 +29,29 @@ const Contactus = () => {
 
     // later we can submit the data to backend endpoint
     // using the code 👇👇👇
-    
+
     fetch("/contactus", {
-       method: 'POST',
-       headers: {
-         "Content-Type": "application/json"
-       },
-       body: JSON.stringify(json),
-     }).then(res => {
-       alert("your response has been sent sucessfully");
-       console.log(res.body);
-       res.status(201).send("users response has been taken successfully")
-       console.log("users response has been taken sucessfully")   
-       // manage response from backend.
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(json),
+    })
+      .then((res) => {
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        issueRef.current.value = "";
 
+        if (res.status !== 201) {
+          alert("Could not submit your issue. Please try again later.");
+          return;
+        }
 
-     })
-       .catch(console.error); // log the error in console
+        alert(
+          "Your issue has been sent sucessfully. Thank you for contacting us."
+        );
+      })
+      .catch(console.error); // log the error in console
   };
 
   return (
@@ -62,7 +68,7 @@ const Contactus = () => {
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
                         <input
-                        name="name"
+                          name="name"
                           ref={nameRef}
                           type="text"
                           id="form3Example1m"
@@ -70,15 +76,16 @@ const Contactus = () => {
                           placeholder="Enter your name"
                           autoFocus
                         />
-                        <label htmlFor="name field" className="form-label">
-                    
-                        </label>
+                        <label
+                          htmlFor="name field"
+                          className="form-label"
+                        ></label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
                         <input
-                        name="email"
+                          name="email"
                           ref={emailRef}
                           type="email"
                           id="form3Example1m"
@@ -99,7 +106,7 @@ const Contactus = () => {
                           Issue
                         </label>
                         <textarea
-                        name="issue"
+                          name="issue"
                           ref={issueRef}
                           className="form-control"
                           required=""
