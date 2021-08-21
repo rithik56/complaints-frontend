@@ -8,7 +8,7 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("/auth/login", {
+      let res = await fetch("/auth/login",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,13 +29,13 @@ const Login = () => {
         // todo: ask user to try again instead of an alert.
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
   return (
     <div className="wrapper">
-      <form className="login">
+        <form className="login">
         <p className="title">Login</p>
         <input ref={emailRef} type="text" placeholder="Email" autoFocus />
         <i className="fa fa-user"></i>
@@ -50,5 +50,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

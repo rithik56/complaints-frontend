@@ -51,9 +51,12 @@ const Register = () => {
          }
          ,body: JSON.stringify(json)
        });
-       
-      console.log(json);
+       nameRef.current.value="";
+       emailRef.current.value="";
+       passwordRef.current.value="";
+       confirmPwdRef.current.value="";
       alert("registration sucessfull");
+      console.log(json);
           
     }else {
       alert(
