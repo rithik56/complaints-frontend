@@ -22,10 +22,11 @@ export const ThemeProvider = ({ children }) => {
           body.classList.add("light-theme");
           break;
         default:
-          body.classList.remove("light-theme");
-          body.classList.add("dark-theme");
+          body.classList.remove("dark-theme");
+          body.classList.add("light-theme");
           break;
       }
+      window.localStorage.setItem("theme", theme);
     } else {
       // dark theme by default
       window.localStorage.setItem("theme", "dark-theme");
@@ -34,6 +35,7 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
+    console.log(theme);
     if (theme === "dark-theme") {
       setTheme("light-theme");
       return "light-theme";
