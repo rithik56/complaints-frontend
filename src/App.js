@@ -22,7 +22,7 @@ const App = () => {
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <Route path="/contact-us" component={Contactus} />
-              <Route path="/online-filine" component={Onlinefiling} />
+              <Route path="/online-filing" component={Onlinefiling} />
               <Route path="/departments" component={Departments} />
             </Switch>
           </BrowserRouter>
