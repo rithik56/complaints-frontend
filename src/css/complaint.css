@@ -1,0 +1,23 @@
+.complaint {
+  background-color: var(--nav-bg);
+  padding: var(--font-size);
+  width: 80%;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: var(--font-size);
+}
+
+.complaint .basic-info {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.complaint .message-container {
+  padding: 15px;
+}
+
+.complaint .message-container .message {
+  font-size: var(--font-size);
+}
