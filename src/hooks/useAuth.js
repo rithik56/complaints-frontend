@@ -1,7 +1,17 @@
-import { createContext, useState, useContext } from "react";
+import {
+  createContext,
+  useState,
+  useContext,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 const AuthContext = createContext(null);
 
+/**
+ *
+ * @returns {{ auth: boolean, setAuth: Dispatch<SetStateAction<boolean>>}}
+ */
 export const useAuth = () => {
   return useContext(AuthContext);
 };

@@ -1,0 +1,120 @@
+.dashboard .quick-access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .dashboard .quick-access {
+    flex-direction: column;
+  }
+}
+
+.dashboard .quick-access .item {
+  padding: 10px;
+  min-width: 20%;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  margin: 0 1em;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .dashboard .quick-access .item {
+    margin: 1em 0;
+    width: 80%;
+  }
+}
+
+.dashboard .quick-access .item .highlight {
+  color: #fff;
+}
+
+.dashboard .quick-access .item .label {
+  color: var(--gray1);
+}
+
+.dashboard .quick-access .item .label,
+.dashboard .quick-access .item .highlight,
+.dashboard .quick-access .item .more-info-button {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard .quick-access .item .more-info-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.dashboard .quick-access .item .icon {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 5px;
+  right: 0;
+  opacity: 0.4;
+  z-index: 0;
+  color: var(--gray6);
+}
+
+.dashboard .quick-access .num-of-users {
+  background-color: var(--blue);
+}
+
+.dashboard .quick-access .num-of-users .more-info-button {
+  background-color: var(--blue-light);
+}
+
+.dashboard .quick-access .total-complaints {
+  background-color: var(--orange);
+}
+
+.dashboard .quick-access .total-complaints .more-info-button {
+  background-color: var(--orange-light);
+}
+
+.dashboard .quick-access .resolved-complaints {
+  background-color: var(--green);
+}
+
+.dashboard .quick-access .resolved-complaints .more-info-button {
+  background-color: var(--green-light);
+}
+
+.dashboard .complaints {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Login UI */
+
+.login-ui {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.login-ui h1 {
+  color: var(--h-color);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.login-ui .login-btn {
+  background-color: var(--blue);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+}
